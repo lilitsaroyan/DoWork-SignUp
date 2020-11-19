@@ -1,0 +1,81 @@
+.inputField {
+  width: 380px;
+  position: relative;
+  padding-bottom: 48px;
+  margin: 0 auto 25px;
+
+  p {
+    color: red;
+    text-align: left;
+    font-size: 13px;
+    position: absolute;
+    bottom: -33px;
+    left: 5px;
+  }
+  .checkMark {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    background: white;
+    border-radius: 10px;
+    .checked {
+        width: 12px;
+        height: 12px;
+        background-color: #027aff;
+        border-radius: 10px;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+    }
+  }
+}
+
+label {
+  display: none;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 12px;
+  line-height: 15px;
+  color: #a4a4a4;
+  &[for="checkbox"] {
+    display: block;
+    color: #2e2e2e;
+    padding-left: 16px;
+    text-align: left;
+    cursor: pointer;
+  }
+}
+
+input {
+  position: absolute;
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 6px 12px;
+  height: 48px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  background-color: #fff;
+  &:valid {
+    padding-top: 24px;
+    box-shadow: 0 0 5px #56a4fd;
+    & ~ label {
+        display: block;
+    }
+  }
+  &:focus {
+    border: 1px solid #027aff;
+    box-shadow: 0 0 5px #56a4fd;
+  }
+  &[type="checkbox"] {
+    visibility: hidden;
+  }
+  &[type="checkbox"]:checked ~ .checkMark.checked {
+    display: block;
+  }
+}
